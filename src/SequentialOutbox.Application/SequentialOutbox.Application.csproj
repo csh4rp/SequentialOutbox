@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\SequentialOutbox.Domain\SequentialOutbox.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\Handlers\" />
+    <Folder Include="Commands\Validators\" />
+  </ItemGroup>
+</Project>
