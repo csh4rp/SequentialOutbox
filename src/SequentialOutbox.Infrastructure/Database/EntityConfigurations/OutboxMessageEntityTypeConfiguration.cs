@@ -8,6 +8,8 @@ internal sealed class OutboxMessageEntityTypeConfiguration : IEntityTypeConfigur
 {
     public void Configure(EntityTypeBuilder<OutboxMessage> builder)
     {
+        builder.ToTable(nameof(OutboxMessage));
+        
         builder.HasKey(b => b.Id);
 
         builder.Property(b => b.Payload)

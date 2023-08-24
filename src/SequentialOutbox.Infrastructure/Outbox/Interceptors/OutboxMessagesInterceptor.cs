@@ -16,7 +16,7 @@ internal sealed class OutboxMessagesInterceptor : SaveChangesInterceptor
             .Select(e => (AggregateRoot)e.Entity)
             .ToList();
 
-        var aggregateEvents = aggregates.Select(a => (a, a.GetEvents())).ToList();
+        var aggregateEvents = aggregates.Select(a => (a, a.GetEvents().ToList())).ToList();
 
         var outboxMessages = new List<OutboxMessage>();
         

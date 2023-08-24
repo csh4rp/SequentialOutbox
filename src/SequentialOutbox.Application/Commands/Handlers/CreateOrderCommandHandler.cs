@@ -7,7 +7,7 @@ namespace SequentialOutbox.Application.Commands.Handlers;
 public static class CreateOrderCommandHandler
 {
     [Transactional]
-    public static async Task Handle(CreateOrderCommand command, 
+    public static async Task<long> Handle(CreateOrderCommand command, 
         CancellationToken cancellationToken,
         IOrderRepository orderRepository)
     {
@@ -16,5 +16,7 @@ public static class CreateOrderCommandHandler
         var order = new Order(command.Email, command.FirstAddressLine, command.SecondAddressLine, items);
 
         await orderRepository.AddAsync(order, cancellationToken);
+
+        return order.Id;
     }
 }

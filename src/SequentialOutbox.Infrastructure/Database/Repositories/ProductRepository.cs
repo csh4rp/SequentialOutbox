@@ -4,21 +4,21 @@ using SequentialOutbox.Infrastructure.Database.Contexts;
 
 namespace SequentialOutbox.Infrastructure.Database.Repositories;
 
-internal sealed class ProductRepository : IProductRepository
+public sealed class ProductRepository : IProductRepository
 {
-    private readonly StoreDataContext _storeDataContext;
+    private readonly StoreDbContext _storeDbContext;
 
-    public ProductRepository(StoreDataContext storeDataContext) => _storeDataContext = storeDataContext;
+    public ProductRepository(StoreDbContext storeDbContext) => _storeDbContext = storeDbContext;
 
     public Task AddAsync(Product product, CancellationToken cancellationToken)
     {
-        _storeDataContext.Add(product);
-        return _storeDataContext.SaveChangesAsync(cancellationToken);
+        _storeDbContext.Add(product);
+        return _storeDbContext.SaveChangesAsync(cancellationToken);
     }
 
     public Task UpdateAsync(Product product, CancellationToken cancellationToken)
     {
-        _storeDataContext.Update(product);
-        return _storeDataContext.SaveChangesAsync(cancellationToken);
+        _storeDbContext.Update(product);
+        return _storeDbContext.SaveChangesAsync(cancellationToken);
     }
 }

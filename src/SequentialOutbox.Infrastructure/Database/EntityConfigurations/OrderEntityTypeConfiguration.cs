@@ -9,6 +9,8 @@ internal sealed class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Or
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
+        builder.ToTable(nameof(Order));
+        
         builder.HasKey(b => b.Id);
 
         builder.Property(b => b.Email)
@@ -30,6 +32,8 @@ internal sealed class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Or
 
         builder.OwnsMany(b => b.Items, b =>
         {
+            b.ToTable(nameof(OrderItem));
+            
             b.HasKey(o => o.Id);
 
             b.HasOne<Product>()

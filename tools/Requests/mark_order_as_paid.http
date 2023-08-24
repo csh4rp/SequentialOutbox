@@ -1,0 +1,6 @@
+POST https://localhost:7268/api/orders/mark-as-paid
+Content-Type: application/json
+
+{
+  "orderId": 4
+}

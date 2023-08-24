@@ -3,9 +3,8 @@
     <ProjectReference Include="..\SequentialOutbox.Domain\SequentialOutbox.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\Validators\" />
-  </ItemGroup>
-  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
     <PackageReference Include="WolverineFx.EntityFrameworkCore" />
   </ItemGroup>
 </Project>

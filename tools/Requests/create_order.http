@@ -1,0 +1,15 @@
+POST https://localhost:7268/api/orders
+Content-Type: application/json
+
+{
+  "email": "mail@mail.com",
+  "firstAddressLine": "Rzeszow",
+  "secondAddressLine": "39-200",
+  "items": [
+    {
+      "productId": 1,
+      "quantity": 1,
+      "unitPrice": 10
+    }
+  ]
+}

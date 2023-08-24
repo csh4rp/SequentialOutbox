@@ -19,8 +19,6 @@ public class Order : AggregateRoot
         Status = OrderStatus.New;
         CreatedAt = DateTimeOffset.UtcNow;
     }
-
-    public long Id { get; init; }
     
     public DateTimeOffset CreatedAt { get; private init; }
     

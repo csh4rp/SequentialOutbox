@@ -28,7 +28,7 @@ internal sealed class OutboxMessageFactory
         return new OutboxMessage
         {
             CreatedAt = DateTimeOffset.UtcNow,
-            Payload = JsonSerializer.Serialize(@event),
+            Payload = JsonSerializer.Serialize(@event, eventType),
             PayloadType = eventType.FullName!,
             Topic = topic,
             Stream = stream,

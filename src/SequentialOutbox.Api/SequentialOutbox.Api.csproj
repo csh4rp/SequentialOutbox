@@ -2,9 +2,11 @@
   <ItemGroup>
     <PackageReference Include="WolverineFx.Http" />
     <PackageReference Include="WolverineFx.Http.FluentValidation" />
+    <PackageReference Include="WolverineFx.Postgresql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SequentialOutbox.Application\SequentialOutbox.Application.csproj" />
+    <ProjectReference Include="..\SequentialOutbox.Infrastructure\SequentialOutbox.Infrastructure.csproj" />
   </ItemGroup>
     
 </Project>
