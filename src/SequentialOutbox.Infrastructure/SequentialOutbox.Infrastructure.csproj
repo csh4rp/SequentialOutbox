@@ -6,8 +6,15 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\SequentialOutbox.Application\SequentialOutbox.Application.csproj" />
       <ProjectReference Include="..\SequentialOutbox.Domain\SequentialOutbox.Domain.csproj" />
+
+
+
+
     </ItemGroup>
+
+
 
 
 </Project>

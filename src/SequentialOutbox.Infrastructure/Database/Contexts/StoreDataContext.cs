@@ -3,7 +3,7 @@ using SequentialOutbox.Domain.Entities;
 
 namespace SequentialOutbox.Infrastructure.Database.Contexts;
 
-public class DataContext : DbContext
+public class StoreDataContext : DbContext
 {
     public DbSet<Order> Orders { get; set; } = default!;
     

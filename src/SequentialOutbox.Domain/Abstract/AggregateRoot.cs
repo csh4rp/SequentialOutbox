@@ -1,9 +1,11 @@
 namespace SequentialOutbox.Domain.Abstract;
 
-public abstract class AggregateRoot : IEvent
+public abstract class AggregateRoot : IEntity
 {
     private readonly Queue<IEvent> _events = new();
 
+    public long Id { get; init; }
+    
     protected void RegisterEvent(IEvent @event) => _events.Enqueue(@event);
 
     public IEnumerable<IEvent> GetEvents()
@@ -13,4 +15,5 @@ public abstract class AggregateRoot : IEvent
             yield return @event;
         }
     }
+
 }

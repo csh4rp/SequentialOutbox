@@ -8,7 +8,6 @@ public class Order : AggregateRoot
 {
     public Order()
     {
-        
     }
     
     public Order(string email, string firstAddressLine, string secondAddressLine, IEnumerable<OrderItem> items)
@@ -17,6 +16,8 @@ public class Order : AggregateRoot
         FirstAddressLine = firstAddressLine;
         SecondAddressLine = secondAddressLine;
         Items = items.ToList();
+        Status = OrderStatus.New;
+        CreatedAt = DateTimeOffset.UtcNow;
     }
 
     public long Id { get; init; }

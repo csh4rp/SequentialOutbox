@@ -1,3 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="WolverineFx.Http" />
+    <PackageReference Include="WolverineFx.Http.FluentValidation" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SequentialOutbox.Application\SequentialOutbox.Application.csproj" />
+  </ItemGroup>
     
 </Project>

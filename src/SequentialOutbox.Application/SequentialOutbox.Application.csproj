@@ -3,7 +3,9 @@
     <ProjectReference Include="..\SequentialOutbox.Domain\SequentialOutbox.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\Handlers\" />
     <Folder Include="Commands\Validators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WolverineFx.EntityFrameworkCore" />
   </ItemGroup>
 </Project>
