@@ -5,7 +5,6 @@ using SequentialOutbox.Domain.Repositories;
 using SequentialOutbox.Infrastructure.Database.Contexts;
 using SequentialOutbox.Infrastructure.Database.Repositories;
 using SequentialOutbox.Infrastructure.Outbox.Interceptors;
-using Wolverine;
 using Wolverine.EntityFrameworkCore;
 
 namespace SequentialOutbox.Infrastructure.Database;
@@ -18,7 +17,7 @@ public static class DatabaseExtensions
         serviceCollection.AddDbContextWithWolverineIntegration<StoreDbContext>(opt =>
         {
             opt.AddInterceptors(new OutboxMessagesInterceptor());
-            opt.UseNpgsql(configuration.GetConnectionString("Postgres"));
+            opt.UseSqlServer(configuration.GetConnectionString("SqlServer"));
         });
 
         serviceCollection.AddScoped<IProductRepository, ProductRepository>()

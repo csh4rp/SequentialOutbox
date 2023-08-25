@@ -9,13 +9,13 @@ using Wolverine;
 using Wolverine.EntityFrameworkCore;
 using Wolverine.Http;
 using Wolverine.Http.FluentValidation;
-using Wolverine.Postgresql;
+using Wolverine.SqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseWolverine((cnx, opt) =>
 {
-    opt.PersistMessagesWithPostgresql(cnx.Configuration.GetConnectionString("Postgres")!);
+    opt.PersistMessagesWithSqlServer(cnx.Configuration.GetConnectionString("SqlServer")!);
     opt.Services.AddDatabase(cnx.Configuration);
     opt.Services.AddOutbox();
     opt.Services.AddValidators();

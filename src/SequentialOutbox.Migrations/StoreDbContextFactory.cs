@@ -10,7 +10,7 @@ public class StoreDbContextFactory : IDesignTimeDbContextFactory<StoreDbContext>
     {
         var optionsBuilder = new DbContextOptionsBuilder<StoreDbContext>();
 
-        optionsBuilder.UseNpgsql(args[0], opt =>
+        optionsBuilder.UseSqlServer(args[0], opt =>
         {
             opt.MigrationsAssembly(GetType().Assembly.FullName);
         });
