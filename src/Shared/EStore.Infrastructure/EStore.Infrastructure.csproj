@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+      <PackageReference Include="WolverineFx.EntityFrameworkCore" />
+      <PackageReference Include="WolverineFx.SqlServer" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EStore.Domain\EStore.Domain.csproj" />
+        
+    </ItemGroup>
+
+</Project>
